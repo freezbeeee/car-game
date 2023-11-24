@@ -3,7 +3,7 @@ import math
 
 #Initialisation
 pygame.init()
-screen = pygame.display.set_mode((500, 500))
+screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
 running = True
 pygame.key.set_repeat(50,0)
@@ -11,8 +11,8 @@ pygame.key.set_repeat(50,0)
 #Création de la voiture du joueur :
 car = pygame.image.load("Voitures/1.png").convert_alpha()
 car_rect = car.get_rect()
-car_rect.x = 500 / 2 - 50
-car_rect.y = 500 / 2 - 25
+car_rect.x = screen.get_size()[0] / 2 - 50
+car_rect.y = screen.get_size()[1] / 2 - 25
 theta = 0
 speed = 5
 
@@ -51,6 +51,6 @@ while running:
         screen.fill((0, 0, 0)) 
         car_movement()
         pygame.display.flip()
-        clock.tick(30)
+        clock.tick(60)
 
 pygame.quit()
